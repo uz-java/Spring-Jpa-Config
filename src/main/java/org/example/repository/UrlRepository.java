@@ -15,5 +15,5 @@ import java.util.Optional;
 @Repository
 @Transactional
 public interface UrlRepository extends JpaRepository<UrlEntity, Long> {
-    Optional<UrlEntity> findByShortenedUrl(String shortenedUrl);
+    UrlEntity findByShortenedUrl(String shortenedUrl);
 }
