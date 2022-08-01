@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:include="fragments.html::header">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body style="text-align: center">
+<form class="mb-0" method="post" action="/auth/login">
+    <div class="form-group mt-4" style="width: 50%;display: inline-block; text-align: left">
+        <!-- Email input -->
+        <div class="form-group">
+            <label for="exampleInputEmail1" th:text="#{Email.Address}"></label>
+            <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                   placeholder="Enter email">
+            <small id="emailHelp" class="form-text text-muted" th:text="#{EmailHelp}"></small>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputPassword1" th:text="#{Password}"></label>
+            <input type="password" name="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+
+        <!-- Submit button -->
+        <button type="submit" class="btn btn-primary btn-block mb-0" th:text="#{Sign.in}"></button>
+    </div>
+</form>
+
+<div class="text-center mt-0">
+    <p class="mt-0">Not a member?
+        <button class="btn btn-link mt-0" data-toggle="modal" data-target="#register-modal"
+                style="border-style: none;background-color: white;" th:text="#{Register}">
+        </button>
+    </p>
+</div>
+
+
+<div class="modal fade" id="register-modal" tabindex="-1" role="dialog"
+     aria-labelledby="exampleModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog" role="document" style="text-align: left">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Registration form</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="post" action="/auth/register">
+                    <div class="row">
+
+                        <div class="col-md-6">
+                            <div class="form-group mb-3">
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control" placeholder="Enter email"/>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label>Password</label>
+                                <input type="password" name="password" class="form-control"
+                                       placeholder="Enter password"/>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label>Confirm Password</label>
+                                <input type="password" name="confirmPassword" class="form-control"
+                                       placeholder="Confirm password"/>
+                            </div>
+                            <button type="submit" class="btn btn-primary">register</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
+<div th:include="fragments.html :: js_files"></div>
+</body>
+</html>
