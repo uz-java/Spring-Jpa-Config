@@ -30,8 +30,6 @@ import java.util.Properties;
 @EnableJpaRepositories(basePackages = "org.example.repository")
 public class AppContext {
     private final Environment environment;
-
-
     @Bean
     public LocalContainerEntityManagerFactoryBean entityManagerFactory() {
         LocalContainerEntityManagerFactoryBean entityManagerFactoryBean = new LocalContainerEntityManagerFactoryBean();
@@ -42,7 +40,6 @@ public class AppContext {
         entityManagerFactoryBean.setJpaProperties(hibernateProperties());
         return entityManagerFactoryBean;
     }
-
     @Bean
     public DataSource dataSource() {
         DriverManagerDataSource dataSource = new DriverManagerDataSource();
@@ -52,7 +49,6 @@ public class AppContext {
         dataSource.setPassword(environment.getRequiredProperty("jdbc.password"));
         return dataSource;
     }
-
     private Properties hibernateProperties() {
         Properties properties = new Properties();
         properties.put("hibernate.dialect", environment.getRequiredProperty("hibernate.dialect"));
@@ -63,7 +59,6 @@ public class AppContext {
         properties.put("hibernate.cache.use_query_cache", environment.getRequiredProperty("hibernate.cache.use_query_cache"));
         return properties;
     }
-
     @Bean
     public PlatformTransactionManager
     transactionManager(final EntityManagerFactory emf) {
@@ -71,7 +66,6 @@ public class AppContext {
         transactionManager.setEntityManagerFactory(emf);
         return transactionManager;
     }
-
     @Bean
     public PersistenceExceptionTranslationPostProcessor
     translationPostProcessor() {

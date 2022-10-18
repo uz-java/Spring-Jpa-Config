@@ -33,13 +33,11 @@ import java.util.Locale;
 @RequiredArgsConstructor
 public class WebMvcConfig implements WebMvcConfigurer {
     private ApplicationContext applicationContext;
-
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**")
                 .addResourceLocations("/resources/");
     }
-
     @Bean
     public SpringResourceTemplateResolver templateResolver() {
         SpringResourceTemplateResolver templateResolver = new SpringResourceTemplateResolver();
@@ -50,7 +48,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         templateResolver.setCacheable(false);
         return templateResolver;
     }
-
     @Bean
     public SpringTemplateEngine templateEngine(SpringResourceTemplateResolver templateResolver) {
         SpringTemplateEngine templateEngine = new SpringTemplateEngine();
@@ -58,7 +55,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         templateEngine.setEnableSpringELCompiler(true);
         return templateEngine;
     }
-
     @Bean
     public ThymeleafViewResolver viewResolver(SpringTemplateEngine templateEngine) {
         ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
@@ -66,7 +62,6 @@ public class WebMvcConfig implements WebMvcConfigurer {
         viewResolver.setOrder(1);
         return viewResolver;
     }
-
     @Bean(name = "messageSource")
     public MessageSource messageSource() {
         ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
@@ -75,25 +70,21 @@ public class WebMvcConfig implements WebMvcConfigurer {
         /*messageSource.setUseCodeAsDefaultMessage(false);*/
         return messageSource;
     }
-
     @Bean(name = "localeResolver")
     public LocaleResolver localeResolver() {
         SessionLocaleResolver slr = new SessionLocaleResolver();
         slr.setDefaultLocale(Locale.US);
         return slr;
     }
-
     public void addInterceptors(InterceptorRegistry registry){
         LocaleChangeInterceptor localeChangeInterceptor=new LocaleChangeInterceptor();
         localeChangeInterceptor.setParamName("lang");
         registry.addInterceptor(localeChangeInterceptor);
     }
-
     @Bean
     public LocalValidatorFactoryBean getValidator(){
         LocalValidatorFactoryBean bean=new LocalValidatorFactoryBean();
         bean.setValidationMessageSource(messageSource());
         return bean;
     }
-
 }

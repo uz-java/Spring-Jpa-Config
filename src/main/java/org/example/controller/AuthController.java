@@ -47,6 +47,5 @@ public class AuthController {
     }
     @GetMapping(value = "/logout")
     public void logout(HttpServletRequest request){
-
     }
 }
