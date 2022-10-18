@@ -1,5 +1,5 @@
 
-What this project does is if we give the originalUrl it will generate a shortened Url for us.
+## What this project does is if we give the originalUrl it will generate a shortened Url for us.
 
 ### datasource config
 ```
