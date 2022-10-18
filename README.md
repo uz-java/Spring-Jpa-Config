@@ -85,7 +85,9 @@ public class WebMvcConfig implements WebMvcConfigurer {
     }
 }
 ```
-
+##
+![register](register.png)
+![add](add.png)
 ![home](home.png)
 
 
