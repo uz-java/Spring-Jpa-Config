@@ -1,4 +1,6 @@
 
+What this project does is if we give the originalUrl it will generate a shortened Url for us.
+
 ### datasource config
 ```
 spring.datasource.url=jdbc:postgresql://localhost:5432/ProjectName
