@@ -1,6 +1,14 @@
 
 ## What this project does is if we give the originalUrl it will generate a shortened Url for us.
 
+Spring MVC : Spring is widely used for creating scalable applications. For web applications Spring provides Spring MVC framework which is a widely used module of spring which is used to create scalable web applications. Spring MVC framework enables the separation of modules namely Model View, Controller, and seamlessly handles the application integration. This enables the developer to create complex applications also using plain java classes. The model object can be passed between view and controller using maps. In this article, we will see how to set up a Spring MVC application in the Eclipse IDE and understand how to make applications. The Spring MVC framework consists of the following components :
+
+- Model – A model can be an object or collection of objects which basically contains the data of the application.
+- View – A view is used for displaying the information to the user in a specific format. Spring supports various technologies like freemarker, velocity, and thymeleaf.
+- Controller – It contains the logical part of the application. @Controller annotation is used to mark that class as a controller.
+- Front Controller – It remains responsible for managing the flow of the web application. Dispatcher Servlet acts as a front controller in Spring MVC.
+
+
 ### datasource config
 ```
 spring.datasource.url=jdbc:postgresql://localhost:5432/ProjectName
@@ -20,6 +28,7 @@ hibernate.cache.use_second_level_cache=false
 hibernate.cache.use_query_cache=false
         
 ```
+## Apache Tomcat: apache-tomcat-8.5.81 download.
 
 ### WebMvcConfigurer
 ```java
