@@ -14,6 +14,7 @@
 
 
 
+
 ## What this project does is if we give the originalUrl it will generate a shortened Url for us.
 
 Spring MVC : Spring is widely used for creating scalable applications. For web applications Spring provides Spring MVC framework which is a widely used module of spring which is used to create scalable web applications. Spring MVC framework enables the separation of modules namely Model View, Controller, and seamlessly handles the application integration. This enables the developer to create complex applications also using plain java classes. The model object can be passed between view and controller using maps. In this article, we will see how to set up a Spring MVC application in the Eclipse IDE and understand how to make applications. The Spring MVC framework consists of the following components :
